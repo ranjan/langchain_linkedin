@@ -20,8 +20,8 @@ def ice_break_with(name: str) -> str:
     summary_prompt_template = PromptTemplate(
         input_variables=["information"], template=summary_template
     )
-    #llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
-    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434")
+    llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
+    #llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434")
     chain = summary_prompt_template | llm
 
     res = chain.invoke(input={"information": linkedin_data})
@@ -33,4 +33,4 @@ if __name__ == "__main__":
     load_dotenv()
 
     print("Ice Breaker Enter")
-    ice_break_with(name="Eden Marco")
+    ice_break_with(name="Ranjan Kumar  pune Ruby on Rails")
