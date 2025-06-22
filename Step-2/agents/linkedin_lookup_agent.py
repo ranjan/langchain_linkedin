@@ -9,6 +9,8 @@ from langchain_core.tools import Tool
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain import hub
 from tools.tools import get_profile_url_tavily
+from langchain.prompts.prompt import PromptTemplate
+
 
 
 def lookup(name: str) -> str:
@@ -29,6 +31,11 @@ def lookup(name: str) -> str:
     Query: {query}
     """.strip()
 
+    prompt_template = PromptTemplate(
+        template=template, input_variables=["query"]
+    )
+
+
     tools_for_agent = [
         Tool(
             name="Crawl Google 4 linkedin profile page",
@@ -40,15 +47,22 @@ def lookup(name: str) -> str:
     react_prompt = hub.pull("hwchase17/react")
     agent = create_react_agent(llm=llm, tools=tools_for_agent, prompt=react_prompt)
 
-    agent_executor = AgentExecutor(
-        agent=agent,
-        tools=tools_for_agent,
-        verbose=True,
-        handle_parsing_errors=True  # handles LLM formatting issues
+    agent_executor = AgentExecutor(agent=agent, tools=tools_for_agent, verbose=True)
+
+
+    # agent_executor = AgentExecutor(
+    #     agent=agent,
+    #     tools=tools_for_agent,
+    #     verbose=True,
+    #     handle_parsing_errors=True  # handles LLM formatting issues
+    # )
+
+    result = agent_executor.invoke(
+        input={"input": prompt_template.format_prompt(query=name)}
     )
 
-    formatted_input = template.format(query=name)
-    result = agent_executor.invoke({"input": formatted_input})
+    # formatted_input = template.format(query=name)
+    # result = agent_executor.invoke({"input": formatted_input})
 
     return result["output"]
 

@@ -1,0 +1,258 @@
+{
+    "person": {
+        "Skills": [
+            "Ruby on Rails",
+            "jQuery",
+            "Ruby",
+            "Web Applications",
+            "AJAX",
+            "Software Development",
+            "JavaScript",
+            "Apache",
+            "MySQL",
+            "Git",
+            "Linux",
+            "Nginx",
+            "Test Driven Development",
+            "MVC",
+            "Python",
+            "Cucumber",
+            "RSpec",
+            "Heroku",
+            "Capistrano",
+            "BDD",
+            "Shell Scripting",
+            "Amazon Web Services (AWS)",
+            "Puppet",
+            "Chef",
+            "Unix",
+            "Open Source",
+            "GitHub",
+            "Bash",
+            "DevOps",
+            "ruby",
+            "Ansible",
+            "Docker"
+        ],
+        "PhoneNumbers": [
+            {
+                "Extension": "",
+                "Number": "+91 8500991617",
+                "Type": ""
+            },
+            {
+                "Extension": "",
+                "Number": "+91 7838764250",
+                "Type": "Mobile"
+            }
+        ],
+        "Education": [
+            {
+                "School Name": "Gogte Institue of Technology",
+                "Start Date": "2002",
+                "End Date": "2006",
+                "Notes": "",
+                "Degree Name": "BE",
+                "Activities": ""
+            },
+            {
+                "School Name": "A N College",
+                "Start Date": "1998",
+                "End Date": "2000",
+                "Notes": "",
+                "Degree Name": "ISC",
+                "Activities": ""
+            }
+        ],
+        "Profile": [
+            {
+                "First Name": "Ranjan",
+                "Last Name": "Kumar",
+                "Maiden Name": "",
+                "Address": "Pune Maharashtra",
+                "Birth Date": "Jan 1, 1987",
+                "Headline": "Technical Lead | Remote | Consultant | Ruby on Rails | DevOps",
+                "Summary": "**Solution Achitect | AI & OpenAI Integrator | DevOps & Security Enthusiast | Debugging Pro**  I'm a Ruby on Rails developer who builds, secures, and scales end-to-end web applications, from the Linux server to the frontend UI. I thrive on creating systems that are not just functional, but intelligent, resilient, and easy to maintain. I specialize in end-to-end  application setups, handling everything from server provisioning and web server configuration (Nginx, Thin) to authentication (Devise, SAML), frontend customization (CKEditor 5, TinyMCE, Bootstrap), and deep service integrations (Twilio, Microsoft Graph, OpenAI).  \ud83e\udd16 On the AI front, I build smart features using OpenAI and vector search, enabling intelligent content generation, semantic search, and dynamic user experiences.  \ud83d\udd0d I'm also strong on the debugging and RCA side, whether it's Linux-level issues, webserver misconfigurations, Rails stack anomalies, or hard-to-trace performance bottlenecks. If it breaks, I fix it. If it\u2019s unclear, I dig in until it\u2019s not. For security and DevOps, I work with EC2, fail2ban, iptables, log compression, session hardening, and scalable deployment strategies, making sure what we build stays online and protected. Whether you need deep integration, tight security, AI features, or just a full-stack Rails app that works and keeps working, I'm here for it.",
+                "Industry": "Software Development",
+                "Zip Code": "411015",
+                "Geo Location": "Pune, Maharashtra, India",
+                "Twitter Handles": "[ranjankumar188]",
+                "Websites": "[OTHER:http://github.com/ranjan]",
+                "Instant Messengers": "[SKYPE:ranjankumar188]"
+            }
+        ],
+        "Job_Applicant_Saved_Answers": [
+            {
+                "Question": "First name",
+                "Answer": "Ranjan"
+            },
+            {
+                "Question": "Mobile phone number",
+                "Answer": "+91 8500991617"
+            },
+            {
+                "Question": "Last name",
+                "Answer": "kumar"
+            },
+            {
+                "Question": "Please submit a resume or LinkedIn profile",
+                "Answer": "2085628452.pdf"
+            }
+        ],
+        "Languages": [
+            {
+                "Name": "English",
+                "Proficiency": "Professional working proficiency"
+            },
+            {
+                "Name": "hindi",
+                "Proficiency": "Native or bilingual proficiency"
+            }
+        ],
+        "Email_Addresses": [
+            {
+                "Email Address": "ranjankumar@gmail.com",
+                "Confirmed": "Yes",
+                "Primary": "Yes",
+                "Updated On": "Not Available"
+            }
+        ],
+        "Whatsapp_Phone_Numbers": [
+            {
+                "Number": "8500991617",
+                "Extension": "",
+                "Is_WhatsApp_Number": "false"
+            }
+        ],
+        "Recommendations_Received": [
+            {
+                "First Name": "Tariq",
+                "Last Name": "Ahmed",
+                "Company": "GTreasury",
+                "Job Title": "VP, Global Head of Engineering",
+                "Text": "I inherited a product that was in dire need of repair and in search of someone to help me rescue the product. I was fortunate to have discovered Ranjan who quickly reversed engineered the application, document it, and lead the stabilization efforts.    Ranjan is a highly intelligent creative problem solver who knows how to get things done. He's game to tackle any challenge, a true professional, and a joy to work with.    I truly hope to work with Ranjan again in the future. It's rare to come across someone who excels in so many dimensions.    Thanks Ranjan!",
+                "Creation Date": "06/27/15, 05:35 AM",
+                "Status": "VISIBLE"
+            },
+            {
+                "First Name": "Thaniyarasu",
+                "Last Name": "Kannusamy",
+                "Company": "Further",
+                "Job Title": "GCP Architect",
+                "Text": "i have been worked with him in 2 companies (Srishti & CastleRock) .  technically very sound , but not shown up .  very soft/cool guy. he has excellent knowledge in Ruby,Rails,Jquery,Shell Scripting and other open source technologies.",
+                "Creation Date": "07/22/13, 05:24 AM",
+                "Status": "VISIBLE"
+            },
+            {
+                "First Name": "Vinay",
+                "Last Name": "Sanker",
+                "Company": "Ruby on Rails",
+                "Job Title": "Full Stack Developer for Ruby On Rails, Javascript, TypeScript, React JS, Node JS and Html5",
+                "Text": "I am having a pleasant experience working with Ranjan in Sumeru Solutions, he is a quite mature and dedicated toward his professinal goals. He has a blanaced attitude toward life and work. A kind of person who has a attitude for hard work and is a very good team player. Ranjan is a person who can work for hours together untill a solution has arrived. He is a person who doesnt take \"not possible\" as a answer to any problem.",
+                "Creation Date": "04/17/13, 07:30 PM",
+                "Status": "VISIBLE"
+            }
+        ],
+        "Profile_Summary": [
+            "\ud83d\udcbb **Solution Achitect | AI & OpenAI Integrator | DevOps & Security Enthusiast | Debugging Pro**\n\nI'm a Ruby on Rails developer who builds, secures, and scales end-to-end web applications, from the Linux server to the frontend UI. I thrive on creating systems that are not just functional, but intelligent, resilient, and easy to maintain.\n\n\ud83d\udd27 I specialize in end-to-end  application setups, handling everything from server provisioning and web server configuration (Nginx, Thin) to authentication (Devise, SAML), frontend customization (CKEditor 5, TinyMCE, Bootstrap), and deep service integrations (Twilio, Microsoft Graph, OpenAI).\n\n\ud83e\udd16 On the AI front, I build smart features using OpenAI and vector search, enabling intelligent content generation, semantic search, and dynamic user experiences.\n\n\ud83d\udd0d I'm also strong on the debugging and RCA side, whether it's Linux-level issues, webserver misconfigurations, Rails stack anomalies, or hard-to-trace performance bottlenecks. If it breaks, I fix it. If it\u2019s unclear, I dig in until it\u2019s not.\n\n\ud83d\udee1\ufe0f For security and DevOps, I work with EC2, fail2ban, iptables, log compression, session hardening, and scalable deployment strategies, making sure what we build stays online and protected.\n\n\ud83d\ude80 Whether you need deep integration, tight security, AI features, or just a full-stack Rails app that works and keeps working, I'm here for it."
+        ],
+        "learning_role_play_messages": [],
+        "Positions": [
+            {
+                "Company Name": "New Age Services",
+                "Title": "Vice President Information Technology",
+                "Description": "\ud83d\udcbb **Rails Specialist | OpenAI Integrator | DevOps & Security Enthusiast | Debugging Pro**  I'm a Ruby on Rails developer who builds, secures, and scales end-to-end web applications, from the Linux server to the frontend UI. I thrive on creating systems that are not just functional, but intelligent, resilient, and easy to maintain.  \ud83d\udd27 I specialize in end-to-end Rails app setups, handling everything from server provisioning and web server configuration (Nginx, Thin) to authentication (Devise, SAML), frontend customization (CKEditor 5, TinyMCE, Bootstrap), and deep service integrations (Twilio, Microsoft Graph, OpenAI).  \ud83e\udd16 On the AI front, I build smart features using OpenAI and vector search, enabling intelligent content generation, semantic search, and dynamic user experiences.  \ud83d\udd0d I'm also strong on the debugging and RCA side, whether it's Linux-level issues, webserver misconfigurations, Rails stack anomalies, or hard-to-trace performance bottlenecks. If it breaks, I fix it. If it\u2019s unclear, I dig in until it\u2019s not.  \ud83d\udee1\ufe0f For security and DevOps, I work with EC2, fail2ban, iptables, log compression, session hardening, and scalable deployment strategies, making sure what we build stays online and protected.  \ud83d\ude80 Whether you need deep integration, tight security, AI features, or just a full-stack Rails app that works and keeps working, I'm here for it.  Let\u2019s connect. I love projects that challenge me and make tech just a little smarter.",
+                "Location": "",
+                "Started On": "Nov 2024",
+                "Finished On": ""
+            },
+            {
+                "Company Name": "Red Hat",
+                "Title": "SME",
+                "Description": "",
+                "Location": "",
+                "Started On": "Aug 2015",
+                "Finished On": "Jul 2021"
+            },
+            {
+                "Company Name": "Persistent Systems",
+                "Title": "Team Lead",
+                "Description": "",
+                "Location": "",
+                "Started On": "Apr 2012",
+                "Finished On": "Jul 2015"
+            },
+            {
+                "Company Name": "Castle Rock Research Corporation",
+                "Title": "Senior Software Engineer",
+                "Description": "Requirement Gathering and Analysis, Project Planning, Estimations, Pair Programming,",
+                "Location": "Bangalore",
+                "Started On": "Nov 2010",
+                "Finished On": "Mar 2012"
+            },
+            {
+                "Company Name": "Sumeru Solutions",
+                "Title": "Software Engineer",
+                "Description": "Requirement Gathering and Analysis, Project Planning,",
+                "Location": "",
+                "Started On": "May 2008",
+                "Finished On": "Jun 2010"
+            }
+        ],
+        "Certifications": [
+            {
+                "Name": "RHCSA Red Hat Certified System Administrator",
+                "Url": "https://www.redhat.com/rhtapps/services/certifications/badge/verify/VWOLORVHN7EIBWPQWHNEPLXICUAEQU3CUPSQX2KSDXT6RW46LQ3T7ULZ55KZZ56SKO7EQ3ETTLYZQ4U5NQYTCNA62RUWOCM34WWBUYQ=",
+                "Authority": "Red Hat",
+                "Started On": "May 2016",
+                "Finished On": "",
+                "License Number": "160-124-608"
+            },
+            {
+                "Name": "EX276 Red Hat Certificate of Expertise in Containerizing Software Application Development",
+                "Url": "https://www.redhat.com/rhtapps/services/certifications/badge/verify/VWOLORVHN7EIBWPQWHNEPLXICUAEQU3CUPSQX2KSDXT6RW46LQ3YRF3N6LCV6RKZZ4GD7PMMCEFUGY63QRPQRXSPZB7LTVAJCTPQU23STVWDCMJUD3KGSZYJTPS2YGTCOKOWYMJRGQPNI2LHBGN6LLA2MI======",
+                "Authority": "Red Hat",
+                "Started On": "Jun 2017",
+                "Finished On": "",
+                "License Number": "160-124-608"
+            },
+            {
+                "Name": "Red Hat Certified Engineer",
+                "Url": "https://www.redhat.com/rhtapps/services/certifications/badge/verify/VWOLORVHN7EIBWPQWHNEPLXICUAEQU3CUPSQX2KSDXT6RW46LQ3XCZJWRJNV7ILTXVE4I6VB7OTCG4U5NQYTCNA62RUWOCM34WWBUYQ=",
+                "Authority": "Red Hat",
+                "Started On": "Apr 2018",
+                "Finished On": "",
+                "License Number": "160-124-608"
+            }
+        ],
+        "Projects": [
+            {
+                "Title": "Solaro",
+                "Description": "Great Project",
+                "Url": "www.solaro.com",
+                "Started On": "Jan 2011",
+                "Finished On": "Dec 2011"
+            }
+        ],
+        "Recommendations_Given": [
+            {
+                "First Name": "Rajeev",
+                "Last Name": "Kumar",
+                "Company": "Zee Entertainment Enterprises Limited",
+                "Job Title": "Technical Project Lead",
+                "Text": "Rajeev is an extremely hardworking, self motivated and knowledgeable developer.I wish him best of luck for his future endeavor.",
+                "Creation Date": "04/10/13, 02:34 PM",
+                "Status": ""
+            },
+            {
+                "First Name": "Neeraj",
+                "Last Name": "Kumar",
+                "Company": "Terralogic Inc.",
+                "Job Title": "Senior Solutions Architect",
+                "Text": "Neeraj and me are working in same project for around year. I found Neeraj very good in Test Driven Development  along with good knowledge of Ruby on Rails.He takes initiative in each and every small aspect in the project. He is a nice person to work with and also good asset to any team. He is flexible and confident.",
+                "Creation Date": "01/11/13, 04:54 PM",
+                "Status": ""
+            }
+        ]
+    }
+}
