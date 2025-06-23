@@ -9,7 +9,7 @@ import os
 os.environ["LANGCHAIN_TRACING_V2"] = "false"
 
 def ice_break_with(name: str) -> str:
-    username = lookup_agent(name=name)
+    profile_url, tool_used = lookup_agent(name=name)
 
     summary_template = """
     given the information {information} about a person I want you to create:
@@ -20,9 +20,10 @@ def ice_break_with(name: str) -> str:
         input_variables=["information"], template=summary_template
     )
     #llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
-    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434")
+    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434", temperature=0.2)
     chain = summary_prompt_template | llm
-    data = scrape_profile(profile_username=username)
+    data = scrape_profile(profile_username=profile_url, mock=True, source=tool_used)
+
     res = chain.invoke(input={"information": data})
     print(res)
 
@@ -30,4 +31,4 @@ if __name__ == "__main__":
     load_dotenv()
 
     print("Ice Breaker Enter")
-    ice_break_with(name="Ranjan Kumar pune twitter")
+    ice_break_with(name="Ranjan Kumar pune github")

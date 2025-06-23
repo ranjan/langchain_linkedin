@@ -15,23 +15,23 @@ from tools.tools import (
 )
 from langchain.prompts.prompt import PromptTemplate
 
-def lookup(name: str) -> str:
-    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434")
 
-    # Strong ReAct-style prompt to guide LLM behavior
+def lookup(name: str) -> tuple[str, str]:
+    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434", temperature=0.2)
+
     template = """
     You are a helpful assistant that finds profile URLs.
-    
+
     Given a name or search query: {query}, you must:
     1. Use the tool to search for the profile.
     2. Once a result is found, respond ONLY with:
-    
+
     Final Answer: <profile-url>
-    
+
     Do NOT say 'Action: None' or any extra commentary. Only use tools, and when you're confident, output the final answer.
-    
+
     Query: {query}
-    """.strip()
+    """
 
     prompt_template = PromptTemplate(
         template=template, input_variables=["query"]
@@ -39,17 +39,17 @@ def lookup(name: str) -> str:
 
     tools_for_agent = [
         Tool(
-            name="Crawl Google 4 linkedin profile page",
+            name="LinkedIn Finder",
             func=get_profile_url_tavily,
             description="Useful for finding a LinkedIn profile from a name or search phrase"
         ),
         Tool(
-            name="Twitter User Lookup",
+            name="Twitter Finder",
             func=get_twitter_profile,
             description="Fetches Twitter user info based on name"
         ),
         Tool(
-            name="GitHub User Lookup",
+            name="GitHub Finder",
             func=get_github_profile,
             description="Retrieves GitHub user info from a name or username"
         )
@@ -62,15 +62,23 @@ def lookup(name: str) -> str:
         agent=agent,
         tools=tools_for_agent,
         verbose=True,
-        handle_parsing_errors=True  # handles LLM formatting issues
+        handle_parsing_errors=True,
+        return_intermediate_steps=True  # Important!
     )
 
     result = agent_executor.invoke(
         input={"input": prompt_template.format_prompt(query=name)}
     )
 
-    # formatted_input = template.format(query=name)
-    # result = agent_executor.invoke({"input": formatted_input})
+    output = result.get("output")
+    steps = result.get("intermediate_steps", [])
 
-    return result["output"]
+    used_tool_name = None
+    for action, _observation in steps:
+        if hasattr(action, "tool"):
+            used_tool_name = action.tool
+            break
+
+    return output, used_tool_name
+
 
