@@ -17,7 +17,7 @@ from langchain.prompts.prompt import PromptTemplate
 
 
 def lookup(query: str) -> tuple[str, str]:
-    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434", temperature=0)
+    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434", temperature=0.8)
     # template = """
     # You are a helpful assistant that finds profile URLs.
     #
@@ -65,10 +65,7 @@ def lookup(query: str) -> tuple[str, str]:
         tools=tools_for_agent,
         verbose=True,
         handle_parsing_errors=True,
-        return_intermediate_steps=True,
-        ** {
-            "early_stopping_method": "generate",
-        }
+        return_intermediate_steps=True
     )
 
     result = agent_executor.invoke(
