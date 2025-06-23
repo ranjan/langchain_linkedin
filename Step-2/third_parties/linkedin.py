@@ -15,13 +15,14 @@ def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = True):
         #     linkedin_profile_url,
         #     timeout=10,
         # )
-
+        print("Using mock Linkedin results\n")
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         mock_file = os.path.join(base_dir, "mock_data", "linkedin_profile.json")
 
         with open(mock_file, "r") as f:
             response_data = json.load(f)  # Already a dict
     else:
+        print("Using Live Linkedin results\n")
         api_endpoint = "https://api.scrapin.io/enrichment/profile"
         params = {
             "apikey": os.environ["SCRAPIN_API_KEY"],

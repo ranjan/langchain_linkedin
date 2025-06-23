@@ -15,10 +15,12 @@ def get_profile_url_tavily(name: str):
         with open(mock_file, "r") as f:
             mock_results = json.load(f)
         print("Using mock Tavily results\n")
+        print(mock_results)
         return mock_results[0]["url"] if mock_results else None
     else:
         from langchain_community.tools.tavily_search import TavilySearchResults
         search = TavilySearchResults()
         res = search.run(f"{name}")
-        print("Live Tavily Results \n")
+        print("Live Tavily Results... \n")
+        print(res)
         return res[0]["url"] if res else None
