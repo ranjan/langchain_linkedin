@@ -8,23 +8,25 @@ from langchain_community.llms import Ollama
 from langchain_core.tools import Tool
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain import hub
-from tools.tools import get_profile_url_tavily
+from tools.tools import (
+    get_profile_url_tavily,
+    get_twitter_profile,
+    get_github_profile
+)
 from langchain.prompts.prompt import PromptTemplate
-
-
 
 def lookup(name: str) -> str:
     llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434")
 
     # Strong ReAct-style prompt to guide LLM behavior
     template = """
-    You are a helpful assistant that finds LinkedIn profile URLs.
+    You are a helpful assistant that finds profile URLs.
     
     Given a name or search query: {query}, you must:
-    1. Use the tool to search for the LinkedIn profile.
+    1. Use the tool to search for the profile.
     2. Once a result is found, respond ONLY with:
     
-    Final Answer: <linkedin-profile-url>
+    Final Answer: <profile-url>
     
     Do NOT say 'Action: None' or any extra commentary. Only use tools, and when you're confident, output the final answer.
     
@@ -35,20 +37,26 @@ def lookup(name: str) -> str:
         template=template, input_variables=["query"]
     )
 
-
     tools_for_agent = [
         Tool(
             name="Crawl Google 4 linkedin profile page",
             func=get_profile_url_tavily,
             description="Useful for finding a LinkedIn profile from a name or search phrase"
+        ),
+        Tool(
+            name="Twitter User Lookup",
+            func=get_twitter_profile,
+            description="Fetches Twitter user info based on name"
+        ),
+        Tool(
+            name="GitHub User Lookup",
+            func=get_github_profile,
+            description="Retrieves GitHub user info from a name or username"
         )
     ]
 
     react_prompt = hub.pull("hwchase17/react")
     agent = create_react_agent(llm=llm, tools=tools_for_agent, prompt=react_prompt)
-
-    #agent_executor = AgentExecutor(agent=agent, tools=tools_for_agent, verbose=True)
-
 
     agent_executor = AgentExecutor(
         agent=agent,

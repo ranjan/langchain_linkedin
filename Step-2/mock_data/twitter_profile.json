@@ -1,0 +1,68 @@
+{
+  "person":
+  {
+    "twitter_profile": {
+      "Username": "ranjankumar188",
+      "Name": "Ranjan Kumar",
+      "Location": "Pune, India",
+      "Profile_Image_URL": "https://pbs.twimg.com/profile_images/1234567890/ranjan_profile.jpg",
+      "Bio": "Ruby on Rails | OpenAI | DevOps | Freelance Consultant | Debugging Pro | Building secure and scalable web systems end-to-end.",
+      "Website": "https://github.com/ranjan",
+      "Followers_Count": 420,
+      "Following_Count": 120,
+      "Tweets_Count": 2100,
+      "Listed_Count": 12,
+      "Verified": false,
+      "Joined": "March 2011",
+      "Pinned_Tweet": {
+        "Text": "Building intelligent, scalable, and secure web systems using Ruby on Rails, OpenAI, and DevOps best practices. Let's connect!",
+        "Date": "2024-09-12",
+        "Likes": 125,
+        "Retweets": 48,
+        "Replies": 17
+      },
+      "Recent_Tweets": [
+        {
+          "Text": "Just deployed another AI-powered Rails feature using OpenAI embeddings + vector search. Semantic UX FTW! 🚀 #rails #openai",
+          "Date": "2025-06-10",
+          "Likes": 72,
+          "Retweets": 24
+        },
+        {
+          "Text": "Diagnosed a critical production issue in a Rails app within 30 mins—full RCA and fix deployed with zero downtime. 💪",
+          "Date": "2025-05-29",
+          "Likes": 64,
+          "Retweets": 18
+        }
+      ],
+      "Topics": [
+        "Ruby on Rails",
+        "OpenAI",
+        "AI Integration",
+        "DevOps",
+        "Security",
+        "Debugging",
+        "Full-Stack Web Development",
+        "Linux"
+      ],
+      "DMs_Open": false,
+      "Languages": [
+        {
+          "Name": "English",
+          "Proficiency": "Professional working proficiency"
+        },
+        {
+          "Name": "Hindi",
+          "Proficiency": "Native or bilingual proficiency"
+        }
+      ],
+      "Contact_Email": "ranjankumar188@gmail.com",
+      "Phone_Numbers": [
+        {
+          "Type": "Mobile",
+          "Number": "+91 86009990616"
+        }
+      ]
+    }
+  }
+}
