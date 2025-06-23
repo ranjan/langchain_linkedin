@@ -26,6 +26,9 @@
         <div class="card mt-4">
             <div class="card-body">
                 <h4 class="card-title text-success">✅ Result</h4>
+                {% if query %}
+                    <p><strong>🔍 Search Query:</strong> "{{ query }}"</p>
+                {% endif %}
                 <p><strong>🔗 Profile URL:</strong> <a href="{{ url }}" target="_blank">{{ url }}</a></p>
                 <p><strong>🧰 Tool Used:</strong> {{ tool }}</p>
                 <hr>

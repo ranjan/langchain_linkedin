@@ -8,6 +8,8 @@ def index():
     summary = None
     profile_url = None
     tool_used = None
+    query = None
+
 
     if request.method == "POST":
         #query = request.form.get("query")
@@ -16,7 +18,7 @@ def index():
         if query:
             summary, profile_url, tool_used = ice_break_with(query)
 
-    return render_template("index.html", summary=summary, url=profile_url, tool=tool_used)
+    return render_template("index.html", summary=summary, url=profile_url, tool=tool_used, query=query)
 
 if __name__ == "__main__":
     app.run(debug=True)
