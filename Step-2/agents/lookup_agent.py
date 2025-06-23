@@ -16,22 +16,24 @@ from tools.tools import (
 from langchain.prompts.prompt import PromptTemplate
 
 
-def lookup(name: str) -> tuple[str, str]:
-    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434", temperature=0.2)
+def lookup(query: str) -> tuple[str, str]:
+    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434", temperature=0)
+    # template = """
+    # You are a helpful assistant that finds profile URLs.
+    #
+    # Given a name or search query: {query}, you must:
+    # 1. Use the tool to search for the profile.
+    # 2. Once a result is found, respond ONLY with:
+    #
+    # Final Answer: <profile-url>
+    #
+    # Do NOT say 'Action: None' or any extra commentary. Only use tools, and when you're confident, output the final answer.
+    #
+    # Query: {query}
+    # """
 
-    template = """
-    You are a helpful assistant that finds profile URLs.
-
-    Given a name or search query: {query}, you must:
-    1. Use the tool to search for the profile.
-    2. Once a result is found, respond ONLY with:
-
-    Final Answer: <profile-url>
-
-    Do NOT say 'Action: None' or any extra commentary. Only use tools, and when you're confident, output the final answer.
-
-    Query: {query}
-    """
+    template = """given a search query {query} I want you to get it me a link to their profile url.
+                              Your answer should contain only a URL"""
 
     prompt_template = PromptTemplate(
         template=template, input_variables=["query"]
@@ -63,16 +65,21 @@ def lookup(name: str) -> tuple[str, str]:
         tools=tools_for_agent,
         verbose=True,
         handle_parsing_errors=True,
-        return_intermediate_steps=True  # Important!
+        return_intermediate_steps=True,
+        ** {
+            "early_stopping_method": "generate",
+        }
     )
 
     result = agent_executor.invoke(
-        input={"input": prompt_template.format_prompt(query=name)}
+        input={"input": prompt_template.format_prompt(query=query)}
     )
-
+    print("**********************************")
+    print(result)
     output = result.get("output")
     steps = result.get("intermediate_steps", [])
-
+    print(steps)
+    print("**********************************")
     used_tool_name = None
     for action, _observation in steps:
         if hasattr(action, "tool"):
