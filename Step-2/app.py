@@ -10,15 +10,19 @@ def index():
     tool_used = None
     query = None
 
-
     if request.method == "POST":
-        #query = request.form.get("query")
-        query = request.form.get("name")  # fix field name
+        query = request.form.get("name")  # Matches input field name in HTML
 
         if query:
-            summary, profile_url, tool_used = ice_break_with(query)
+            summary, profile_url, tool_used, _ = ice_break_with(query)
 
-    return render_template("index.html", summary=summary, url=profile_url, tool=tool_used, query=query)
+    return render_template(
+        "index.html",
+        summary=summary,
+        url=profile_url,
+        tool=tool_used,
+        query=query
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)

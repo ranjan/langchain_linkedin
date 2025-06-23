@@ -31,9 +31,17 @@
                 {% endif %}
                 <p><strong>🔗 Profile URL:</strong> <a href="{{ url }}" target="_blank">{{ url }}</a></p>
                 <p><strong>🧰 Tool Used:</strong> {{ tool }}</p>
+
                 <hr>
                 <h5 class="mt-4">📝 Summary:</h5>
-                <p>{{ summary|safe }}</p>
+                <p>{{ summary.summary | safe }}</p>
+
+                <h5 class="mt-4">✨ Interesting Facts:</h5>
+                <ul>
+                    {% for fact in summary.facts %}
+                        <li>{{ fact }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
         {% endif %}
