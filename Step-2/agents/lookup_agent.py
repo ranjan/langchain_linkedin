@@ -17,20 +17,7 @@ from langchain.prompts.prompt import PromptTemplate
 
 
 def lookup(query: str) -> tuple[str, str]:
-    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434", temperature=0.8)
-    # template = """
-    # You are a helpful assistant that finds profile URLs.
-    #
-    # Given a name or search query: {query}, you must:
-    # 1. Use the tool to search for the profile.
-    # 2. Once a result is found, respond ONLY with:
-    #
-    # Final Answer: <profile-url>
-    #
-    # Do NOT say 'Action: None' or any extra commentary. Only use tools, and when you're confident, output the final answer.
-    #
-    # Query: {query}
-    # """
+    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434", temperature=1)
 
     template = """given a search query {query} I want you to get it me a link to their profile url.
                               Your answer should contain only a URL"""

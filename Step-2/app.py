@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from ice_breaker import ice_break_with
+from ice_breaker import ice_break_with_sequential
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ def index():
         query = request.form.get("name")  # Matches input field name in HTML
 
         if query:
-            summary, profile_url, tool_used, _ = ice_break_with(query)
+            summary, profile_url, tool_used, _ = ice_break_with_sequential(query)
 
     return render_template(
         "index.html",
