@@ -3,8 +3,7 @@ from langchain_core.output_parsers import PydanticOutputParser
 from langchain.prompts import PromptTemplate
 from langchain_community.llms import Ollama
 from langchain.chains import SequentialChain, LLMChain
-from numpy.f2py.crackfortran import verbose
-from langchain_openai import OpenAI
+
 from parsers.summary import Summary
 from third_parties.scrapper import scrape_profile
 from agents.lookup_agent import lookup as lookup_agent
@@ -22,7 +21,7 @@ def ice_break_with_sequential(query: str):
     # Step 3: Setup output parser
     parser = PydanticOutputParser(pydantic_object=Summary)
 
-    # Step 4: Define prompt
+    # Step 4: Define prompt for structured summary
     summary_prompt = PromptTemplate(
         template="""
         Use the following information to generate a structured summary.
@@ -38,27 +37,54 @@ def ice_break_with_sequential(query: str):
         partial_variables={"format_instructions": parser.get_format_instructions()},
     )
 
-    # Step 5: LLM and chain
-    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434", temperature=1)
-    summary_chain = LLMChain(llm=llm, prompt=summary_prompt, output_key="structured_summary", verbose=True)
+    # Step 5: Define prompt for LinkedIn-style headline
+    headline_prompt = PromptTemplate(
+        template="""
+        Based on this summary, write a catchy professional LinkedIn headline:
 
-    # Step 6: SequentialChain is overkill here for one step, but shown for clarity/expansion
-    sequential_chain = SequentialChain(
-        chains=[summary_chain],
+        {structured_summary}
+        """.strip(),
+        input_variables=["structured_summary"]
+    )
+
+    # Step 6: Set up LLM and individual chains
+    llm = Ollama(model="llama3", base_url="http://192.168.1.17:11434", temperature=1)
+
+    # First chain: summary
+    summary_chain = LLMChain(
+        llm=llm,
+        prompt=summary_prompt,
+        output_key="structured_summary"
+    )
+
+    # Second chain: headline
+    headline_chain = LLMChain(
+        llm=llm,
+        prompt=headline_prompt,
+        output_key="headline"
+    )
+
+    # Define a SequentialChain that connects the two steps
+    chain = SequentialChain(
+        chains=[summary_chain, headline_chain],
         input_variables=["information"],
-        output_variables=["structured_summary"],
+        output_variables=["structured_summary", "headline"],
         verbose=True
     )
 
-    result = sequential_chain.invoke({"information": scraped_data})
+    # Run the chain
+    result = chain({"information": scraped_data})
 
-    # Step 7: Parse final output
+    # Parse summary output with Pydantic
     parsed = parser.parse(result["structured_summary"])
 
-    return parsed.dict(), profile_url, tool_used, query
+    return parsed.dict(), profile_url, tool_used, query, result["headline"]
 
 if __name__ == "__main__":
     load_dotenv()
     print("Ice Breaker Sequential Chain")
-    result, url, tool, query = ice_break_with_sequential("Ranjan Kumar pune twitter")
+    result, url, tool, query, headline = ice_break_with_sequential("Ranjan Kumar pune linkedin")
+    print("\nResult Summary:")
     print(result)
+    print("\nLinkedIn Headline Suggestion:")
+    print(headline)

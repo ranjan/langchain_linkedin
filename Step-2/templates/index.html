@@ -31,10 +31,12 @@
                 {% endif %}
                 <p><strong>🔗 Profile URL:</strong> <a href="{{ url }}" target="_blank">{{ url }}</a></p>
                 <p><strong>🧰 Tool Used:</strong> {{ tool }}</p>
-
+                <hr>
+                <h5 class="mt-4 text-primary">💼 LinkedIn-Style Headline:</h5>
+                <p class="fst-italic" style="white-space: pre-line;">{{ headline|safe }}</p>
                 <hr>
                 <h5 class="mt-4">📝 Summary:</h5>
-                <p>{{ summary.summary | safe }}</p>
+                <p>{{ summary.summary.replace('\n', '<br>') | safe }}</p>
 
                 <h5 class="mt-4">✨ Interesting Facts:</h5>
                 <ul>
